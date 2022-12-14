@@ -1,11 +1,12 @@
 from django.conf import settings
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 import msal
 import requests
 import string
 import random
 
+User = get_user_model()
 
 ms_settings = settings.MICROSOFT
 graph_url = 'https://graph.microsoft.com/v1.0'
